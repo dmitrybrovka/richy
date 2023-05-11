@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "richy",
+  "description": "Richify text wherever you need!",
+  "version": "1.0.0",
+
+  "action": {
+    "default_icon": {
+      "16": "assets/images/richy@16.png",
+      "24": "assets/images/richy@48.png",
+      "32": "assets/images/richy@32.png"
+    }
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/images/richy.svg"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["assets/vendor/simplemde.min.js", "assets/vendor/simplemde.min.css"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["assets/font/fontawesome-webfont.woff", "assets/font/font-awesome.min.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "clipboardRead"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "css": ["assets/vendor/simplemde.min.css"],
+      "js": ["assets/vendor/simplemde.min.js"]
+    },
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "js": ["src/contentScript.js"]
+    },
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "css": ["assets/font/font-awesome.min.css"]
+    }
+  ],
+
+  "icons": {
+    "16": "assets/images/richy@16.png",
+    "48": "assets/images/richy@48.png",
+    "96": "assets/images/richy@128.png",
+    "128": "assets/images/richy@128.png"
+  }
+}

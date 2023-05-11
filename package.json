@@ -1,0 +1,17 @@
+{
+  "name": "richy",
+  "description": "Richify text wherever you need!",
+  "main": "contentScript.js",
+  "license": "FSFUL",
+  "version": "1.0.0",
+  "private": true,
+  "typings": "index.d.ts",
+  "author": {
+    "name": "dmitrybrovka",
+    "email": "dmitrybrovka@yandex.ru"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.1",
+    "eslint": "5.6.1"
+  }
+}
